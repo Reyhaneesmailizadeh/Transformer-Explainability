@@ -424,10 +424,9 @@ def vit_base_patch16_224(pretrained=False, **kwargs):
 #         load_pretrained(model, num_classes=model.num_classes, in_chans=kwargs.get('in_chans', 3))
 #     return model
 
-def vit_large_patch16(**kwargs):
+def vit_large_patch16_224(pretrained=False, **kwargs):
     model = VisionTransformer(
-        patch_size=16, embed_dim=1024, depth=24, num_heads=16, mlp_ratio=4, qkv_bias=True,
-        norm_layer=partial(nn.LayerNorm, eps=1e-6), **kwargs)
+        patch_size=16, embed_dim=1024, depth=24, num_heads=16, mlp_ratio=4, qkv_bias=True, **kwargs)
     return model
 
 def deit_base_patch16_224(pretrained=False, **kwargs):
