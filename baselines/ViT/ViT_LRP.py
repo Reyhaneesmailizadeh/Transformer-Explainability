@@ -31,7 +31,7 @@ default_cfgs = {
         mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5),
     ),
     'vit_large_patch16_224': _cfg(
-        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-vitjx/jx_vit_large_p16_224-4ee7a4dc.pth',
+        url='/content/drive/MyDrive/checkpoints/checkpoint-best-finetune.pth',
         mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5)),
 }
 
