@@ -84,7 +84,7 @@ def resume_checkpoint(model, checkpoint_path, optimizer=None, loss_scaler=None, 
         raise FileNotFoundError()
 
 
-def load_pretrained(model, cfg=None, num_classes=1000, in_chans=3, filter_fn=None, strict=True):
+def load_pretrained(model, cfg=None, num_classes=2, in_chans=3, filter_fn=None, strict=True):
     if cfg is None:
         cfg = getattr(model, 'default_cfg')
     if cfg is None or 'url' not in cfg or not cfg['url']:
@@ -135,7 +135,7 @@ def load_pretrained(model, cfg=None, num_classes=1000, in_chans=3, filter_fn=Non
             state_dict[conv1_name + '.weight'] = conv1_weight
 
     classifier_name = cfg['classifier']
-    if num_classes == 1000 and cfg['num_classes'] == 1001:
+    if num_classes == 2 and cfg['num_classes'] == 3:
         # special case for imagenet trained models with extra background class in pretrained weights
         classifier_weight = state_dict[classifier_name + '.weight']
         state_dict[classifier_name + '.weight'] = classifier_weight[1:]
