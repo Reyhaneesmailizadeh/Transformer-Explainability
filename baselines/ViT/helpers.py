@@ -91,7 +91,8 @@ def load_pretrained(model, cfg=None, num_classes=1000, in_chans=3, filter_fn=Non
         _logger.warning("Pretrained model URL is invalid, using random initialization.")
         return
 
-    state_dict = model_zoo.load_url(cfg['url'], progress=False, map_location='cpu')
+    state_dict = torch.load("/content/drive/MyDrive/checkpoint-best-Edited-.pth", map_location='cpu')
+
 
     if filter_fn is not None:
         state_dict = filter_fn(state_dict)
